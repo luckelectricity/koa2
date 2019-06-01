@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/luckelectricity/koa2#readme",
   "dependencies": {
-    "koa": "^2.7.0"
+    "koa": "^2.7.0",
+    "koa-router": "^7.4.0"
   }
 }
