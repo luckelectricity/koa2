@@ -12,8 +12,3 @@ app.use(static(path.join(__dirname, staticPath)));
 app.listen(3000, () => {
   console.log('请运行localhost:3000,打开页面');
 });
-
-UPDATE mysql.user
-SET authentication_string = PASSWORD('123456'), password_expired = 'N'
-WHERE User = 'root' AND Host = 'localhost';
-FLUSH PRIVILEGES;

@@ -22,8 +22,7 @@ let cookie = {
   overwrite: '',  // 是否允许重写
   secure: '',
   sameSite: '',
-  signed: '',
-
+  signed: ''
 }
 
 // 使用session中间件

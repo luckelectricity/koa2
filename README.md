@@ -26,3 +26,29 @@ koa2 练习项目
     signed 所请求的cookie应该被签名
 
 
+参考这个链接：
+[Koa2进阶学习笔记](https://chenshenhai.github.io/koa2-note/)
+
+中间件
+----
+[koa-router](https://www.npmjs.com/package/koa-router) 不解释，自己看文档
+
+[koa-static](https://www.npmjs.com/package/koa-static) 静态文件服务的中间件
+
+[koa-session-minimal](https://www.npmjs.com/package/koa-session-minimal) 适用于koa2 的session中间件，提供存储介质的读写接口 。
+
+[koa-mysql-session](https://www.npmjs.com/package/koa-mysql-session) 为koa-session-minimal中间件提供MySQL数据库的session数据读写操作。
+将sessionId和对于的数据存到数据库
+
+测试模块
+----
+[mocha](https://www.npmjs.com/package/mocha) 模块是测试框架
+
+[chai](https://www.npmjs.com/package/chai)模块是用来进行测试结果断言库，比如一个判断 1 + 1 是否等于 2
+
+[supertest](https://www.npmjs.com/package/supertest) 模块是http请求测试库，用来请求API接口
+
+debug
+----
+
+node --inspect index.js 这样就能在chrome进行debug
