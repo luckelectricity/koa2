@@ -1,0 +1,19 @@
+{
+  "name": "movie_trailer",
+  "version": "1.0.0",
+  "description": "基于koa2的电影预告",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "koa2",
+    "电影"
+  ],
+  "author": "luckelectricity",
+  "license": "MIT",
+  "dependencies": {
+    "koa": "^2.7.0"
+  }
+}
