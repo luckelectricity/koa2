@@ -1,0 +1,16 @@
+{
+  "name": "koa_project",
+  "version": "1.0.0",
+  "description": "一个koa的练习项目",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "koa",
+    "node",
+    "mysql"
+  ],
+  "author": "luckelectricity",
+  "license": "ISC"
+}
