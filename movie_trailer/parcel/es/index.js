@@ -6,7 +6,7 @@ class AppContainer extends React.Component {
   state = {
     name: 'Parcel 打包案例'
   }
-  compomemtDidMount () {
+  componentDidMount () {
     setTimeout(() => {
       this.setState({name: '还是 webapck 牛逼'})
     }, 2000);
