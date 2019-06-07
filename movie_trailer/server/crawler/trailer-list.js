@@ -49,5 +49,7 @@ const sleep = time =>
     }
   });
   browser.close();
-  console.log(result);
+  // console.log(result);
+  process.send({ result });
+  process.exit(0)
 })();
