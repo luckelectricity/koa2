@@ -15,10 +15,12 @@
   "author": "luckelectricity",
   "license": "MIT",
   "dependencies": {
+    "ali-oss": "^6.1.1",
     "ejs": "^2.6.1",
     "koa": "^2.7.0",
     "koa-static": "^5.0.0",
     "koa-views": "^6.2.0",
+    "nanoid": "^2.0.3",
     "pug": "^2.0.3",
     "puppeteer": "^1.17.0",
     "react": "^16.8.6",

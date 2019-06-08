@@ -37,7 +37,7 @@ const sleep = time =>
         let poster = it
           .find('.pic img')
           .attr('src')
-          .replace('s_ratio', 'l_ratio');
+          .replace('s_ratio', 'l_ratio').replace('https', 'http');
         links.push({
           doubanId,
           title,
@@ -51,5 +51,5 @@ const sleep = time =>
   browser.close();
   // console.log(result);
   process.send({ result });
-  process.exit(0)
+  process.exit(0);
 })();

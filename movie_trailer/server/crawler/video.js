@@ -1,7 +1,7 @@
 const puppeteer = require('puppeteer');
 const base = 'https://movie.douban.com/subject/';
-const doubanId = '26891256';
-const videoUrl = 'https://movie.douban.com/trailer/246013/#content';
+const doubanId = '30163509';
+// const videoUrl = 'https://movie.douban.com/trailer/246013/#content';
 const sleep = time =>
   new Promise(resolve => {
     setTimeout(resolve, time);
@@ -34,29 +34,29 @@ const sleep = time =>
         cover
       };
     }
-    return {}
+    return {};
   });
   let video;
-  if(result.link){
+  if (result.link) {
     await page.goto(result.link, {
       waitUntil: 'networkidle2'
-    })
-    console.log('打开之前')
+    });
+    console.log('打开之前');
     await sleep(2000);
     video = await page.evaluate(() => {
       var $ = window.$;
-      var item = $('source')
-      if(item && item.length > 0){
-        return item.attr('src')
+      var item = $('source');
+      if (item && item.length > 0) {
+        return item.attr('src').replace('https', 'http');
       }
-      return ''
-    })
+      return '';
+    });
   }
   const data = {
     video,
     doubanId,
-    cover: result.cover
-  }
+    cover: result.cover.replace('https', 'http')
+  };
   browser.close();
   // console.log(result);
   process.send(data);
