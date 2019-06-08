@@ -20,6 +20,7 @@
     "koa": "^2.7.0",
     "koa-static": "^5.0.0",
     "koa-views": "^6.2.0",
+    "mongoose": "^5.5.13",
     "nanoid": "^2.0.3",
     "pug": "^2.0.3",
     "puppeteer": "^1.17.0",
