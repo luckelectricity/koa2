@@ -25,3 +25,37 @@ const db = mongoose.connection;
 // 将连接与错误事件绑定（以获得连接错误的提示）
 db.on('error', console.error.bind(console, 'MongoDB 连接错误：'));
 ```
+### 模式（schemas）
+
+定义你的schema
+
+Mongoose的一切都始于一个Schema。每个schema映射到MongoDB的集合(collection)和定义该集合(collection)中的文档的形式。
+```
+var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
+
+var blogSchema = new Schema({
+  title:  String,
+  author: String,
+  body:   String,
+  comments: [{ body: String, date: Date }],
+  date: { type: Date, default: Date.now },
+  hidden: Boolean,
+  meta: {
+    votes: Number,
+    favs:  Number
+  }
+});
+```
+
+如果您想稍后添加额外的键（keys），使用`Schema.add`方法。
+
+```
+const ToySchema = new Schema();
+ToySchema.add({ name: 'string', color: 'string', price: 'number' });
+
+const TurboManSchema = new Schema();
+// You can also `add()` another schema and copy over all paths, virtuals,
+// getters, setters, indexes, methods, and statics.
+TurboManSchema.add(ToySchema).add({ year: Number });
+```
