@@ -65,5 +65,28 @@ var db = connect('company');
 //   regeditTime: new Date()} },
 //   { upsert: true }
 // ); // 8 混蛋啊，新来了个同事，给我添加进去他的信息
+// db.workmate.update({ name: 'liuhuan' }, { $push: { interest: 'playGame' } }); // 9 给刘欢同学添加玩游戏的爱好
+
+// db.workmate.update(
+//   { name: 'MinJie' },
+//   { $push: { 'skill.skillFour': 'draw' } }
+// ); // 10 $push修饰符还可以为内嵌文档增加值
+
+// db.workmate.update(
+//   { name: 'MinJie', interest: { $ne: 'playGame' } },
+//   { $push: { interest: 'Game' } }
+// ); // 11 如果爱好都有这个了，就别傻乎乎添加啦
+// db.workmate.update(
+//   { name: 'liuhuan' },
+//   { $addToSet: { interest: 'readBook' } }
+// ); // 12 查找是否存在，不存在就push上去
+
+// var newInterset = ['Sing', 'Dance', 'Code'];
+// db.workmate.update(
+//   { name: 'liuhuan' },
+//   { $addToSet: { interest: { $each: newInterset } } }
+// ); // 13 使用 $each 追加
+// db.workmate.update({ name: 'liuhuan' }, { $pop: { interest: 1 } }); // 14 删除最后一个 code
+// db.workmate.update({ name: 'liuhuan' }, { $set: { 'interest.2': 'Code' } }); // 15 按照数组位置修改
 
 print('[SUCCESS]: The data was inserted successfully.');
