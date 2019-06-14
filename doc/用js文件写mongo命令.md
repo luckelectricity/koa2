@@ -51,3 +51,21 @@ db.workmate.update({"name":"MinJie"},{$unset:{"age":''}})
 ```
 db.workmate.update({"name":"MinJie"},{$inc:{"age":-2}})
 ```
+
+### multi选项
+<span style='color:red;font-size:20px'>这时候每个数据都发生了改变，multi是有ture和false两个值，true代表全部修改，false代表只修改一个（默认值）</span>
+
+给每个都添加一项的时候用到
+
+```
+db.workmate.update({},{$set:{interset:[]}},{multi:true})
+```
+
+### upsert选项
+
+upsert是在找不到值的情况下，直接插入这条数据。比如我们这时候又来了一个新同事xiaoWang，我们这时候修改他的信息，age设置成20岁，但集合中并没有这条数据。这时候可以使用upsert选项直接添加。
+
+```
+db.workmate.update({name:'xiaoWang'},{$set:{age:20}},{upsert:true})
+```
+upsert也有两个值：true代表没有就添加，false代表没有不添加(默认值)。
