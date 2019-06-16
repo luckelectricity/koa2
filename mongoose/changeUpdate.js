@@ -89,4 +89,20 @@ var db = connect('company');
 // db.workmate.update({ name: 'liuhuan' }, { $pop: { interest: 1 } }); // 14 删除最后一个 code
 // db.workmate.update({ name: 'liuhuan' }, { $set: { 'interest.2': 'Code' } }); // 15 按照数组位置修改
 
-print('[SUCCESS]: The data was inserted successfully.');
+// db.workmate.update({ sex: 1 }, { $set: { money: 1000 } }, false, true);
+// var resultMessage = db.runCommand({ getLastError: 1 });
+// printjson(resultMessage);  // 16 更新成没成，要给我说下呀
+// var resultMessage = db.runCommand({ ping: 1 });
+// printjson(resultMessage); // 17 如果数据库连接成功会返回 { "ok" : 1 }
+// print('[SUCCESS]: The data was inserted successfully.');
+
+var myModify = {
+  findAndModify: 'workmate',
+  query: { sex: 1 },
+  update: {$inc: {money: 200}},
+  new: true
+};
+
+var resultMessage = db.runCommand(myModify);
+
+printjson(resultMessage);
