@@ -99,6 +99,7 @@ var db = connect('company');
 var myModify = {
   findAndModify: 'workmate',
   query: { sex: 1 },
+  sort: {age: -1},
   update: {$inc: {money: 200}},
   new: true
 };
